@@ -90,9 +90,9 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute top-1/2 -translate-y-1/2 right-8 flex flex-col items-center gap-2 animate-bounce z-30">
-        <p className="text-sm text-muted-foreground backdrop-blur-sm px-3 py-1 rounded-full">Role para baixo</p>
-        <ChevronDown className="w-6 h-6 text-primary" />
+      <div className="absolute top-1/2 -translate-y-1/2 right-8 flex flex-col items-center gap-2 animate-bounce z-30 px-0">
+        
+        
       </div>
     </section>;
 };
