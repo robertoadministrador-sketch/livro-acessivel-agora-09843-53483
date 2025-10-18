@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Play, X } from "lucide-react";
+import { Play, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 interface VideoPlayerProps {
   videoUrl?: string;
@@ -118,6 +118,12 @@ const VideoPlayer = ({
                       <div className="w-2 h-2 bg-success rounded-full animate-pulse"></div>
                       <span className="text-sm font-medium">Acesso Vitalício</span>
                     </div>
+                  </div>
+
+                  {/* Scroll Indicator */}
+                  <div className="flex flex-col items-center gap-2 mt-12 animate-bounce">
+                    <p className="text-sm text-primary-foreground/70 font-medium">Role para baixo</p>
+                    <ChevronDown className="w-6 h-6 text-primary" />
                   </div>
                 </div>
 
