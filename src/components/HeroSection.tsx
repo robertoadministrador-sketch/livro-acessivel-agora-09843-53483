@@ -22,7 +22,7 @@ const HeroSection = () => {
       <div className="relative z-20 container mx-auto px-4 text-center">
         {/* Video Player */}
         <div className="mb-12 fade-in-up">
-          <VideoPlayer videoId="i6mEo5IV-08" platform="youtube" title="Vídeo de Apresentação" description="Conheça a missão da Professora Ana" />
+          <VideoPlayer videoId="Bjv2Iod-jg0" platform="youtube" title="Vídeo de Apresentação" description="Conheça a missão da Professora Ana" />
         </div>
 
         {/* Hero Text */}
