@@ -87,12 +87,12 @@ const HeroSection = () => {
             ✅ Suporte técnico vitalício
           </p>
         </div>
+      </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce fade-in-up">
-          <p className="text-sm text-muted-foreground">Role para baixo</p>
-          <ChevronDown className="w-6 h-6 text-primary" />
-        </div>
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce z-30">
+        <p className="text-sm text-muted-foreground backdrop-blur-sm px-3 py-1 rounded-full">Role para baixo</p>
+        <ChevronDown className="w-6 h-6 text-primary" />
       </div>
     </section>;
 };
