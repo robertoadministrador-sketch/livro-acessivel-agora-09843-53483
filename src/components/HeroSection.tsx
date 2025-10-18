@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { BookOpen, Download, Smartphone, Star } from "lucide-react";
+import { BookOpen, Download, Smartphone, Star, ChevronDown } from "lucide-react";
 import heroImage from "@/assets/hero-books.jpg";
 import VideoPlayer from "./VideoPlayer";
 const HeroSection = () => {
@@ -86,6 +86,12 @@ const HeroSection = () => {
             ✅ Todos os e-books + app de leitura grátis<br />
             ✅ Suporte técnico vitalício
           </p>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce fade-in-up">
+          <p className="text-sm text-muted-foreground">Role para baixo</p>
+          <ChevronDown className="w-6 h-6 text-primary" />
         </div>
       </div>
     </section>;
