@@ -97,10 +97,10 @@ const Footer = () => {
             <Button 
               variant="cta" 
               size="lg" 
-              className="pulse-glow w-full sm:w-auto text-sm sm:text-base"
+              className="neon-blink w-full sm:w-auto text-sm sm:text-base font-bold"
               onClick={() => window.open("https://mpago.la/23pzQfU", "_blank", "noopener,noreferrer")}
             >
-              ACESSO IMEDIATO R$ 19,90
+              ⚡ ACESSO IMEDIATO R$ 19,90 ⚡
             </Button>
           </div>
 
