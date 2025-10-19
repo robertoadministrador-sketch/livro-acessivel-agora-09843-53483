@@ -100,7 +100,7 @@ const Footer = () => {
               className="pulse-glow w-full sm:w-auto text-sm sm:text-base"
               onClick={() => window.open("https://mpago.la/23pzQfU", "_blank", "noopener,noreferrer")}
             >
-              🚀 GARANTA SEU ACESSO VITALÍCIO - R$ 19,90
+              ACESSO IMEDIATO R$ 19,90
             </Button>
           </div>
 
