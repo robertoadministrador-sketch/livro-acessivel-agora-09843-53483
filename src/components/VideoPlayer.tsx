@@ -60,14 +60,6 @@ const VideoPlayer = ({
 
               {/* Main Content */}
               <div className="relative z-10 h-full flex flex-col justify-center items-center p-8 text-center">
-                {/* Video Preview Mockup */}
-                <div className="absolute top-6 right-6 w-32 h-20 bg-primary/20 rounded-lg border border-primary/30 overflow-hidden">
-                  <div className="w-full h-full bg-gradient-hero opacity-60 flex items-center justify-center">
-                    <div className="w-6 h-6 bg-primary-foreground/80 rounded-full flex items-center justify-center">
-                      <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    </div>
-                  </div>
-                </div>
 
                 {/* Main Headlines */}
                 <div className="max-w-4xl space-y-4 sm:space-y-6 px-4">
