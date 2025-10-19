@@ -23,7 +23,7 @@ const Footer = () => {
           </div>
 
           {/* Contact and Support */}
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8 px-4">
             <div className="backdrop-blur-subtle rounded-xl p-6">
               <MessageCircle className="w-8 h-8 text-primary mx-auto mb-3" />
               <h4 className="font-semibold mb-2">Suporte Técnico</h4>
@@ -90,14 +90,14 @@ const Footer = () => {
           </div>
 
           {/* Final CTA */}
-          <div className="backdrop-blur-modern rounded-2xl p-6 mb-8 glow-primary">
-            <p className="text-lg font-semibold mb-4">
+          <div className="backdrop-blur-modern rounded-2xl p-4 sm:p-6 mb-6 sm:mb-8 glow-primary mx-4">
+            <p className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">
               ⚡ Não perca esta oportunidade única!
             </p>
             <Button 
               variant="cta" 
               size="lg" 
-              className="pulse-glow"
+              className="pulse-glow w-full sm:w-auto text-sm sm:text-base"
               onClick={() => window.open("https://mpago.la/23pzQfU", "_blank", "noopener,noreferrer")}
             >
               🚀 GARANTA SEU ACESSO VITALÍCIO - R$ 19,90

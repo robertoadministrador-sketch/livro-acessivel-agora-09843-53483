@@ -26,62 +26,62 @@ const HeroSection = () => {
         </div>
 
         {/* Hero Text */}
-        <div className="mb-12 fade-in-up">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+        <div className="mb-8 sm:mb-12 fade-in-up">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6">
             <span className="text-hero">Livro Acessível</span>
             <br />
             <span className="text-foreground">Agora</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground mb-4 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-3 sm:mb-4 max-w-3xl mx-auto leading-relaxed px-4">
             Democratizando o acesso ao conhecimento através do maior acervo digital de 
             <span className="text-primary font-semibold"> e-books best sellers</span>
           </p>
           
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">Milhares de livros em todas as áreas: medicina, engenharia, negócios, didáticos e muito mais.</p>
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto px-4">Milhares de livros em todas as áreas: medicina, engenharia, negócios, didáticos e muito mais.</p>
         </div>
 
         {/* Key Features */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto fade-in-up">
-          <div className="backdrop-blur-subtle rounded-xl p-6 hover-lift transition-smooth">
-            <BookOpen className="w-12 h-12 text-primary mb-4 mx-auto" />
-            <h3 className="font-semibold text-lg mb-2">Acervo Completo</h3>
-            <p className="text-muted-foreground text-sm">Milhares de best sellers em todas as especialidades</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12 max-w-4xl mx-auto fade-in-up px-4">
+          <div className="backdrop-blur-subtle rounded-xl p-4 sm:p-6 hover-lift transition-smooth">
+            <BookOpen className="w-10 h-10 sm:w-12 sm:h-12 text-primary mb-3 sm:mb-4 mx-auto" />
+            <h3 className="font-semibold text-base sm:text-lg mb-2">Acervo Completo</h3>
+            <p className="text-muted-foreground text-xs sm:text-sm">Milhares de best sellers em todas as especialidades</p>
           </div>
           
-          <div className="backdrop-blur-subtle rounded-xl p-6 hover-lift transition-smooth">
-            <Download className="w-12 h-12 text-secondary mb-4 mx-auto" />
-            <h3 className="font-semibold text-lg mb-2">Múltiplos Formatos</h3>
-            <p className="text-muted-foreground text-sm">Kindle, ePub, PDF - compatível com todos os dispositivos</p>
+          <div className="backdrop-blur-subtle rounded-xl p-4 sm:p-6 hover-lift transition-smooth">
+            <Download className="w-10 h-10 sm:w-12 sm:h-12 text-secondary mb-3 sm:mb-4 mx-auto" />
+            <h3 className="font-semibold text-base sm:text-lg mb-2">Múltiplos Formatos</h3>
+            <p className="text-muted-foreground text-xs sm:text-sm">Kindle, ePub, PDF - compatível com todos os dispositivos</p>
           </div>
           
-          <div className="backdrop-blur-subtle rounded-xl p-6 hover-lift transition-smooth">
-            <Smartphone className="w-12 h-12 text-gold mb-4 mx-auto" />
-            <h3 className="font-semibold text-lg mb-2">App de Leitura</h3>
-            <p className="text-muted-foreground text-sm">Incluso app mobile + opção de audiobook</p>
+          <div className="backdrop-blur-subtle rounded-xl p-4 sm:p-6 hover-lift transition-smooth sm:col-span-2 md:col-span-1">
+            <Smartphone className="w-10 h-10 sm:w-12 sm:h-12 text-gold mb-3 sm:mb-4 mx-auto" />
+            <h3 className="font-semibold text-base sm:text-lg mb-2">App de Leitura</h3>
+            <p className="text-muted-foreground text-xs sm:text-sm">Incluso app mobile + opção de audiobook</p>
           </div>
         </div>
 
         {/* Price & CTA */}
-        <div className="backdrop-blur-modern rounded-2xl p-8 max-w-2xl mx-auto glow-strong fade-in-up">
-          <div className="flex items-center justify-center mb-4">
-            {[...Array(5)].map((_, i) => <Star key={i} className="w-6 h-6 text-gold fill-current" />)}
-            <span className="ml-2 text-gold font-semibold">Acesso Vitalício</span>
+        <div className="backdrop-blur-modern rounded-2xl p-4 sm:p-6 md:p-8 max-w-2xl mx-auto glow-strong fade-in-up">
+          <div className="flex flex-wrap items-center justify-center gap-1 mb-4">
+            {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-gold fill-current" />)}
+            <span className="ml-2 text-gold font-semibold text-sm sm:text-base">Acesso Vitalício</span>
           </div>
           
-          <div className="mb-6">
-            <p className="text-3xl md:text-4xl font-bold mb-2">
-              <span className="text-muted-foreground line-through text-2xl mr-2">R$ 297</span>
+          <div className="mb-4 sm:mb-6">
+            <p className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
+              <span className="text-muted-foreground line-through text-lg sm:text-xl md:text-2xl mr-2">R$ 297</span>
               <span className="text-success">R$ 19,90</span>
             </p>
-            <p className="text-muted-foreground">Taxa única • Sem renovação • Sem mensalidade</p>
+            <p className="text-muted-foreground text-xs sm:text-sm md:text-base">Taxa única • Sem renovação • Sem mensalidade</p>
           </div>
           
-          <Button variant="cta" size="xl" className="w-full mb-4 pulse-glow" onClick={() => window.open("https://mpago.la/23pzQfU", "_blank", "noopener,noreferrer")}>
+          <Button variant="cta" size="xl" className="w-full mb-3 sm:mb-4 pulse-glow text-sm sm:text-base md:text-lg px-4 py-5 sm:py-6" onClick={() => window.open("https://mpago.la/23pzQfU", "_blank", "noopener,noreferrer")}>
             🚀 GARANTIR ACESSO VITALÍCIO AGORA
           </Button>
           
-          <p className="text-sm text-muted-foreground">
+          <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
             ✅ Acesso imediato após o pagamento<br />
             ✅ Todos os e-books + app de leitura grátis<br />
             ✅ Suporte técnico vitalício
@@ -89,11 +89,6 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute top-1/2 -translate-y-1/2 right-8 flex flex-col items-center gap-2 animate-bounce z-30 px-0">
-        
-        
-      </div>
     </section>;
 };
 export default HeroSection;

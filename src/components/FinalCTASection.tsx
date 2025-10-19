@@ -32,16 +32,16 @@ const FinalCTASection = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Final Offer Header */}
-        <div className="text-center mb-12 fade-in-up">
-          <Badge variant="secondary" className="mb-4 text-lg px-6 py-2 pulse-glow">
+        <div className="text-center mb-8 sm:mb-12 fade-in-up px-4">
+          <Badge variant="secondary" className="mb-3 sm:mb-4 text-sm sm:text-base md:text-lg px-4 sm:px-6 py-1.5 sm:py-2 pulse-glow">
             🎯 Última Chance
           </Badge>
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6">
             <span className="text-hero">Transforme sua vida</span>
             <br />
             <span className="text-foreground">através do conhecimento</span>
           </h2>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Esta é sua oportunidade única de ter acesso vitalício ao maior acervo 
             de livros digitais do Brasil por menos que o preço de um único livro físico.
           </p>
@@ -101,15 +101,16 @@ const FinalCTASection = () => {
               <Button 
                 variant="cta" 
                 size="xl" 
-                className="w-full sm:w-auto mb-4 pulse-glow text-xl px-16 py-6"
+                className="w-full mb-3 sm:mb-4 pulse-glow text-sm sm:text-base md:text-lg lg:text-xl px-6 sm:px-10 md:px-16 py-5 sm:py-6"
                 onClick={() => window.open("https://mpago.la/23pzQfU", "_blank", "noopener,noreferrer")}
               >
-                <Shield className="w-6 h-6 mr-2" />
-                QUERO TRANSFORMAR MINHA VIDA AGORA
-                <ArrowRight className="w-6 h-6 ml-2" />
+                <Shield className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 mr-2" />
+                <span className="inline sm:hidden">TRANSFORMAR MINHA VIDA</span>
+                <span className="hidden sm:inline">QUERO TRANSFORMAR MINHA VIDA AGORA</span>
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 ml-2" />
               </Button>
               
-              <p className="text-sm text-muted-foreground mt-4">
+              <p className="text-xs sm:text-sm text-muted-foreground mt-3 sm:mt-4 leading-relaxed">
                 🔒 <strong>100% seguro</strong> • ⚡ <strong>Acesso imediato</strong> • 
                 💎 <strong>Vitalício</strong> • 📱 <strong>Todos os dispositivos</strong>
               </p>

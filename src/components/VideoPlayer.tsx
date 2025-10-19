@@ -70,8 +70,8 @@ const VideoPlayer = ({
                 </div>
 
                 {/* Main Headlines */}
-                <div className="max-w-4xl space-y-6">
-                  <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+                <div className="max-w-4xl space-y-4 sm:space-y-6 px-4">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                     <span className="block text-hero bg-gradient-hero bg-clip-text text-transparent">
                       Maior Acervo
                     </span>
@@ -83,47 +83,47 @@ const VideoPlayer = ({
                     </span>
                   </h1>
                   
-                  <p className="text-xl md:text-2xl text-primary-foreground/90 font-medium max-w-3xl mx-auto leading-relaxed">
+                  <p className="text-base sm:text-lg md:text-xl text-primary-foreground/90 font-medium max-w-3xl mx-auto leading-relaxed">
                     <span className="text-warning font-bold">Milhares de livros</span> para baixar instantaneamente.
                     <br />
                     <span className="text-primary-glow">Conhecimento sem limites</span> ao seu alcance.
                   </p>
 
                   {/* CTA Elements */}
-                  <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-8">
-                    <div className="flex items-center gap-4">
-                      <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center border-2 border-primary/30 hover-lift cursor-pointer transition-smooth pulse-glow" onClick={handlePlay}>
-                        <Play className="w-10 h-10 text-primary-foreground ml-1" />
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-6 sm:mt-8">
+                    <div className="flex items-center gap-3 sm:gap-4">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 bg-primary/20 rounded-full flex items-center justify-center border-2 border-primary/30 hover-lift cursor-pointer transition-smooth pulse-glow" onClick={handlePlay}>
+                        <Play className="w-8 h-8 sm:w-10 sm:h-10 text-primary-foreground ml-1" />
                       </div>
                       <div className="text-left">
-                        <p className="text-primary-foreground font-semibold text-lg">
+                        <p className="text-primary-foreground font-semibold text-base sm:text-lg">
                           Veja Como Funciona
                         </p>
-                        <p className="text-primary-foreground/70 text-sm">1 minuto de demonstração</p>
+                        <p className="text-primary-foreground/70 text-xs sm:text-sm">1 minuto de demonstração</p>
                       </div>
                     </div>
                   </div>
 
                   {/* Trust Elements */}
-                  <div className="flex items-center justify-center gap-8 mt-8 text-primary-foreground/60">
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 md:gap-8 mt-6 sm:mt-8 text-primary-foreground/60">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-success rounded-full animate-pulse"></div>
-                      <span className="text-sm font-medium">100% Seguro</span>
+                      <span className="text-xs sm:text-sm font-medium">100% Seguro</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-success rounded-full animate-pulse"></div>
-                      <span className="text-sm font-medium">Download Imediato</span>
+                      <span className="text-xs sm:text-sm font-medium">Download Imediato</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-success rounded-full animate-pulse"></div>
-                      <span className="text-sm font-medium">Acesso Vitalício</span>
+                      <span className="text-xs sm:text-sm font-medium">Acesso Vitalício</span>
                     </div>
                   </div>
 
                   {/* Scroll Indicator */}
-                  <div className="flex flex-col items-center gap-2 mt-12 animate-bounce">
-                    <p className="text-sm text-primary-foreground/70 font-medium">Role para baixo</p>
-                    <ChevronDown className="w-6 h-6 text-primary" />
+                  <div className="flex flex-col items-center gap-2 mt-8 sm:mt-12 animate-bounce">
+                    <p className="text-xs sm:text-sm text-primary-foreground/70 font-medium">Role para baixo</p>
+                    <ChevronDown className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                   </div>
                 </div>
 

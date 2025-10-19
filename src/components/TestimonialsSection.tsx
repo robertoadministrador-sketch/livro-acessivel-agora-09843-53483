@@ -89,16 +89,16 @@ const TestimonialsSection = () => {
             Milhares já confiam em nós
           </h2>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 max-w-4xl mx-auto px-4">
             {stats.map((stat, index) => (
               <Card 
                 key={index} 
-                className="p-6 text-center backdrop-blur-subtle hover-lift transition-smooth border-primary/20"
+                className="p-3 sm:p-4 md:p-6 text-center backdrop-blur-subtle hover-lift transition-smooth border-primary/20"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="text-3xl mb-2">{stat.icon}</div>
-                <div className="text-2xl md:text-3xl font-bold text-primary mb-1">{stat.number}</div>
-                <p className="text-muted-foreground text-sm">{stat.label}</p>
+                <div className="text-2xl sm:text-3xl mb-1 sm:mb-2">{stat.icon}</div>
+                <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-primary mb-1">{stat.number}</div>
+                <p className="text-muted-foreground text-xs sm:text-sm">{stat.label}</p>
               </Card>
             ))}
           </div>
@@ -106,16 +106,16 @@ const TestimonialsSection = () => {
 
         {/* Testimonials */}
         <div className="mb-16 fade-in-up">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-bold mb-4">
+          <div className="text-center mb-8 sm:mb-12 px-4">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">
               O que nossos usuários dizem
             </h3>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground">
               Transformando vidas através do conhecimento acessível
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 px-4">
             {testimonials.map((testimonial, index) => (
               <Card 
                 key={index} 
