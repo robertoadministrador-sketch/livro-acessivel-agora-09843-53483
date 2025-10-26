@@ -62,15 +62,15 @@ const VideoPlayer = ({
               <div className="relative z-10 h-full flex flex-col justify-center items-center p-8 text-center">
 
                 {/* Main Headlines */}
-                <div className="max-w-4xl space-y-4 sm:space-y-6 px-4">
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                    <span className="block text-hero bg-gradient-hero bg-clip-text text-transparent">
+                <div className="max-w-4xl space-y-4 sm:space-y-6 px-2 sm:px-4">
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+                    <span className="block text-hero bg-gradient-hero bg-clip-text text-transparent drop-shadow-lg">
                       Maior Acervo
                     </span>
-                    <span className="block text-primary-foreground mt-2">
+                    <span className="block text-primary-foreground mt-2 drop-shadow-md">
                       de E-books
                     </span>
-                    <span className="block text-success font-extrabold mt-2">
+                    <span className="block text-success font-extrabold mt-2 drop-shadow-lg text-shadow-glow">
                       da Internet
                     </span>
                   </h1>
@@ -89,7 +89,7 @@ const VideoPlayer = ({
                       </div>
                       <div className="text-left">
                         <p className="text-primary-foreground font-semibold text-base sm:text-lg">
-                          Veja Como Funciona
+                          Vídeo explicativo da Ana
                         </p>
                         <p className="text-primary-foreground/70 text-xs sm:text-sm">1 minuto de demonstração</p>
                       </div>
