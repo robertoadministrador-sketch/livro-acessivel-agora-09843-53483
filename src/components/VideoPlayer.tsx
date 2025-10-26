@@ -88,9 +88,7 @@ const VideoPlayer = ({
                         <Play className="w-8 h-8 sm:w-10 sm:h-10 text-primary-foreground ml-1" />
                       </div>
                       <div className="text-left">
-                        <p className="text-primary-foreground font-semibold text-base sm:text-lg">
-                          Vídeo explicativo da Ana
-                        </p>
+                        <p className="text-primary-foreground font-semibold text-base sm:text-lg">Vídeo explicativo da Professora Ana</p>
                         <p className="text-primary-foreground/70 text-xs sm:text-sm">
                     </p>
                       </div>
