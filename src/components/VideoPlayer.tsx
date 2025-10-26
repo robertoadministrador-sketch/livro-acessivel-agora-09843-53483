@@ -91,7 +91,8 @@ const VideoPlayer = ({
                         <p className="text-primary-foreground font-semibold text-base sm:text-lg">
                           Vídeo explicativo da Ana
                         </p>
-                        <p className="text-primary-foreground/70 text-xs sm:text-sm">1 minuto de demonstração</p>
+                        <p className="text-primary-foreground/70 text-xs sm:text-sm">
+                    </p>
                       </div>
                     </div>
                   </div>
