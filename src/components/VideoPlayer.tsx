@@ -59,18 +59,18 @@ const VideoPlayer = ({
               </div>
 
               {/* Main Content */}
-              <div className="relative z-10 h-full flex flex-col justify-center items-center p-4 sm:p-8 text-center">
+              <div className="relative z-10 h-full flex flex-col justify-start sm:justify-center items-center p-4 sm:p-8 text-center overflow-y-auto">
 
                 {/* Main Headlines */}
-                <div className="max-w-4xl space-y-3 sm:space-y-6 w-full">
-                  <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                    <span className="block text-primary font-extrabold drop-shadow-[0_0_15px_rgba(99,102,241,0.8)]">
+                <div className="max-w-4xl space-y-3 sm:space-y-6 w-full mt-4 sm:mt-0">
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+                    <span className="block text-primary font-extrabold drop-shadow-[0_0_20px_rgba(99,102,241,1)]">
                       Maior Acervo
                     </span>
-                    <span className="block text-white mt-1 sm:mt-2 drop-shadow-lg font-bold">
+                    <span className="block text-white mt-2 sm:mt-2 drop-shadow-[0_0_15px_rgba(255,255,255,0.9)] font-bold">
                       de E-books
                     </span>
-                    <span className="block text-success font-extrabold mt-1 sm:mt-2 drop-shadow-[0_0_20px_rgba(34,197,94,0.8)] text-shadow-glow">
+                    <span className="block text-success font-extrabold mt-2 sm:mt-2 drop-shadow-[0_0_25px_rgba(34,197,94,1)] text-shadow-glow">
                       da Internet
                     </span>
                   </h1>
