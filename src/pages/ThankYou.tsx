@@ -1,15 +1,40 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { BookOpen, Gift, Mail, CheckCircle } from "lucide-react";
-import Footer from "@/components/Footer";
+import { BookOpen, Gift, Mail, CheckCircle, Heart } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useState } from "react";
 
 const ThankYou = () => {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+
   const handleAccessLibrary = () => {
     window.open("https://pt.z-lib.fm/", "_blank", "noopener,noreferrer");
   };
 
   const handleAccessBonus = () => {
     window.open("https://chavedainternetexposeed.my.canva.site/obrigado-por-comprar-09993", "_blank", "noopener,noreferrer");
+  };
+
+  const handleSendMessage = () => {
+    const subject = encodeURIComponent(`Contato de ${formData.name}`);
+    const body = encodeURIComponent(`Nome: ${formData.name}\nEmail: ${formData.email}\n\nMensagem:\n${formData.message}`);
+    window.location.href = `mailto:professoraana.cultura@gmail.com?subject=${subject}&body=${body}`;
+    setIsDialogOpen(false);
+    setFormData({ name: "", email: "", message: "" });
   };
 
   return (
@@ -127,6 +152,68 @@ const ThankYou = () => {
                 Havendo qualquer dúvida ou problema, fique à vontade para entrar em contato diretamente:
               </p>
 
+              <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+                <DialogTrigger asChild>
+                  <Button variant="default" size="lg" className="w-full md:w-auto">
+                    <Mail className="w-5 h-5" />
+                    Enviar Mensagem
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-[500px]">
+                  <DialogHeader>
+                    <DialogTitle>Enviar Mensagem</DialogTitle>
+                    <DialogDescription>
+                      Preencha o formulário abaixo. Sua mensagem será enviada para professoraana.cultura@gmail.com
+                    </DialogDescription>
+                  </DialogHeader>
+                  <div className="space-y-4 py-4">
+                    <div className="space-y-2">
+                      <label htmlFor="name" className="text-sm font-medium">
+                        Nome
+                      </label>
+                      <Input
+                        id="name"
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        placeholder="Seu nome"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label htmlFor="email" className="text-sm font-medium">
+                        Seu Email
+                      </label>
+                      <Input
+                        id="email"
+                        type="email"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        placeholder="seu@email.com"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label htmlFor="message" className="text-sm font-medium">
+                        Mensagem
+                      </label>
+                      <Textarea
+                        id="message"
+                        value={formData.message}
+                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        placeholder="Digite sua mensagem..."
+                        rows={5}
+                      />
+                    </div>
+                  </div>
+                  <div className="flex justify-end gap-3">
+                    <Button variant="outline" onClick={() => setIsDialogOpen(false)}>
+                      Cancelar
+                    </Button>
+                    <Button onClick={handleSendMessage}>
+                      Enviar Mensagem
+                    </Button>
+                  </div>
+                </DialogContent>
+              </Dialog>
+
               <div className="bg-muted/30 rounded-lg p-6 space-y-2">
                 <p className="font-semibold text-foreground">Professora Ana</p>
                 <a 
@@ -152,7 +239,26 @@ const ThankYou = () => {
         </div>
       </section>
       
-      <Footer />
+      {/* Footer Simplificado */}
+      <footer className="relative py-12 border-t border-primary/20">
+        <div className="absolute inset-0 bg-gradient-dark opacity-50"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center space-y-6">
+            <div className="flex items-center justify-center">
+              <Heart className="w-5 h-5 text-primary mr-2" />
+              <p className="text-muted-foreground">
+                Feito com amor pela Professora Ana
+              </p>
+            </div>
+            
+            <p className="text-sm text-muted-foreground">
+              © 2024 Livro Acessível Agora. Todos os direitos reservados.
+              <br />
+              Democratizando o conhecimento • Transformando vidas através da leitura
+            </p>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 };
