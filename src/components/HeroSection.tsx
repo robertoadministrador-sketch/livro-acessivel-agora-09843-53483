@@ -22,12 +22,7 @@ const HeroSection = () => {
       <div className="relative z-20 container mx-auto px-4 text-center">
         {/* Top CTA Button - Mobile Optimized */}
         <div className="mb-6 sm:mb-8 fade-in-up">
-          <Button 
-            variant="cta" 
-            size="xl" 
-            className="neon-blink font-bold text-base sm:text-lg md:text-xl px-6 py-6 sm:py-7 w-full sm:w-auto"
-            onClick={() => window.open("https://mpago.la/23pzQfU", "_blank", "noopener,noreferrer")}
-          >
+          <Button variant="cta" size="xl" className="neon-blink font-bold text-base sm:text-lg md:text-xl px-6 py-6 sm:py-7 w-full sm:w-auto" onClick={() => window.open("https://mpago.la/23pzQfU", "_blank", "noopener,noreferrer")}>
             ⚡ ACESSO IMEDIATO ⚡
           </Button>
         </div>
