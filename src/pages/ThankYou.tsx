@@ -120,7 +120,7 @@ const ThankYou = () => {
                   Acervo Privado "Milhares de E-books no Google Drive"
                 </p>
                 <p className="text-muted-foreground">
-                  Milhares de E-books e muitos outros arquivos com acesso vitalício.
+                  Milhares de E-books para baixar e ler no celular, tablet, computador ou kindle.
                 </p>
 
                 <Button 
