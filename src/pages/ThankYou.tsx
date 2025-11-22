@@ -1,4 +1,4 @@
-bimport { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { BookOpen, Gift, Mail, CheckCircle, Heart } from "lucide-react";
 import {
