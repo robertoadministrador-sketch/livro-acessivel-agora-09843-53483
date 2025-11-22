@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+bimport { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { BookOpen, Gift, Mail, CheckCircle, Heart } from "lucide-react";
 import {
@@ -26,7 +26,7 @@ const ThankYou = () => {
   };
 
   const handleAccessBonus = () => {
-    window.open("https://chavedainternetexposeed.my.canva.site/obrigado-por-comprar-09993", "_blank", "noopener,noreferrer");
+    window.open("https://drive.google.com/drive/folders/1rEkxrjnCVaRxOyoYPZ6cXKKOOQFdg8iD?usp=drive_link", "_blank", "noopener,noreferrer");
   };
 
   const handleSendMessage = () => {
@@ -117,7 +117,7 @@ const ThankYou = () => {
               
               <div className="space-y-4">
                 <p className="text-foreground font-semibold">
-                  Acervo Privado "A Chave da Internet"
+                  Acervo Privado "Milhares de E-books no Google Drive"
                 </p>
                 <p className="text-muted-foreground">
                   Milhares de E-books e muitos outros arquivos com acesso vitalício.
