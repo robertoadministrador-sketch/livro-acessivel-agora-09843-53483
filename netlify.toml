@@ -1,0 +1,4 @@
+[[redirects]]
+from = "/meuckeckout/*"
+to = "https://meuckeckout.netlify.app/:splat"
+status = 200
