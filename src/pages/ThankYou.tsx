@@ -166,7 +166,7 @@ const ThankYou = () => {
                 <DialogTrigger asChild>
                   <Button variant="default" size="lg" className="w-full md:w-auto">
                     <Mail className="w-5 h-5" />
-                    Enviar Mensagem
+                    💬 Tenho uma dúvida
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-[500px]">
