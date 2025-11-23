@@ -11,13 +11,17 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
 import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 const ThankYou = () => {
+  const { toast } = useToast();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    subject: "Contato - Página de Agradecimento",
     message: ""
   });
 
@@ -29,12 +33,18 @@ const ThankYou = () => {
     window.open("https://drive.google.com/drive/folders/1rEkxrjnCVaRxOyoYPZ6cXKKOOQFdg8iD?usp=drive_link", "_blank", "noopener,noreferrer");
   };
 
-  const handleSendMessage = () => {
-    const subject = encodeURIComponent(`Contato de ${formData.name}`);
-    const body = encodeURIComponent(`Nome: ${formData.name}\nEmail: ${formData.email}\n\nMensagem:\n${formData.message}`);
-    window.location.href = `mailto:professoraana.cultura@gmail.com?subject=${subject}&body=${body}`;
+  const handleSendMessage = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    const mailtoLink = `mailto:professoraana.cultura@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Nome: ${formData.name}\nEmail: ${formData.email}\n\nMensagem:\n${formData.message}`)}`;
+    window.location.href = mailtoLink;
+    
+    toast({
+      title: "Abrindo seu cliente de email",
+      description: "Sua mensagem está pronta para ser enviada."
+    });
+    
     setIsDialogOpen(false);
-    setFormData({ name: "", email: "", message: "" });
   };
 
   return (
@@ -161,56 +171,73 @@ const ThankYou = () => {
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-[500px]">
                   <DialogHeader>
-                    <DialogTitle>Enviar Mensagem</DialogTitle>
+                    <DialogTitle className="flex items-center gap-2">
+                      <Mail className="w-5 h-5 text-primary" />
+                      Entre em contato
+                    </DialogTitle>
                     <DialogDescription>
-                      Preencha o formulário abaixo. Sua mensagem será enviada para professoraana.cultura@gmail.com
+                      Envie sua mensagem para a Professora Ana. Resposta em até 24 horas.
                     </DialogDescription>
                   </DialogHeader>
-                  <div className="space-y-4 py-4">
+                  <form onSubmit={handleSendMessage} className="space-y-4 mt-4">
                     <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-medium">
-                        Nome
-                      </label>
+                      <Label htmlFor="name">Seu nome</Label>
                       <Input
                         id="name"
+                        placeholder="Digite seu nome"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        placeholder="Seu nome"
+                        required
                       />
                     </div>
+                    
                     <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium">
-                        Seu Email
-                      </label>
+                      <Label htmlFor="email">Seu e-mail</Label>
                       <Input
                         id="email"
                         type="email"
+                        placeholder="seu@email.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="seu@email.com"
+                        required
                       />
                     </div>
+                    
                     <div className="space-y-2">
-                      <label htmlFor="message" className="text-sm font-medium">
-                        Mensagem
-                      </label>
+                      <Label htmlFor="subject">Assunto</Label>
+                      <Input
+                        id="subject"
+                        value={formData.subject}
+                        onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                        required
+                      />
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="message">Sua mensagem</Label>
                       <Textarea
                         id="message"
-                        value={formData.message}
-                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         placeholder="Digite sua mensagem..."
                         rows={5}
+                        value={formData.message}
+                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        required
                       />
                     </div>
-                  </div>
-                  <div className="flex justify-end gap-3">
-                    <Button variant="outline" onClick={() => setIsDialogOpen(false)}>
-                      Cancelar
+                    
+                    <div className="bg-muted/30 rounded-lg p-4 space-y-1">
+                      <p className="text-sm font-semibold flex items-center gap-2">
+                        <Mail className="w-4 h-4 text-primary" />
+                        Destinatário:
+                      </p>
+                      <p className="text-sm text-muted-foreground">professoraana.cultura@gmail.com</p>
+                    </div>
+                    
+                    <Button type="submit" variant="cta" className="w-full">
+                      <Mail className="w-4 h-4 mr-2" />
+                      Enviar mensagem
                     </Button>
-                    <Button onClick={handleSendMessage}>
-                      Enviar Mensagem
-                    </Button>
-                  </div>
+                  </form>
                 </DialogContent>
               </Dialog>
 
