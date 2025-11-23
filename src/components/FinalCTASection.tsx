@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Shield, Zap, Crown, Gift, ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
+import professoraAnaImage from "@/assets/professora-ana.png";
 const FinalCTASection = () => {
   const guarantees = ["Acesso 100% vitalício garantido", "Suporte técnico especializado", "Atualizações constantes do acervo", "Compatibilidade com todos os dispositivos"];
   const bonuses = [{
@@ -122,8 +123,12 @@ const FinalCTASection = () => {
         <div className="max-w-3xl mx-auto text-center fade-in-up">
           <Card className="backdrop-blur-subtle p-8">
             <div className="mb-6">
-              <div className="w-20 h-20 bg-gradient-hero rounded-full mx-auto mb-4 flex items-center justify-center">
-                <span className="text-2xl font-bold text-primary-foreground">PA</span>
+              <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full ring-4 ring-primary/20 shadow-xl hover-lift transition-smooth">
+                <img 
+                  src={professoraAnaImage} 
+                  alt="Professora Ana - Idealizadora do Projeto" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h4 className="text-2xl font-bold mb-2">Professora Ana</h4>
               <p className="text-muted-foreground mb-4">

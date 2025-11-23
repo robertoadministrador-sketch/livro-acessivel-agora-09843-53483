@@ -82,8 +82,8 @@ const ThankYou = () => {
               <Button 
                 onClick={handleAccessLibrary}
                 variant="cta" 
-                size="xl"
-                className="w-full md:w-auto"
+                size="lg"
+                className="w-full md:w-auto text-sm sm:text-base"
               >
                 <BookOpen className="w-5 h-5" />
                 ACESSAR MEU ACERVO DE E-BOOKS
@@ -126,8 +126,8 @@ const ThankYou = () => {
                 <Button 
                   onClick={handleAccessBonus}
                   variant="premium" 
-                  size="xl"
-                  className="w-full md:w-auto"
+                  size="lg"
+                  className="w-full md:w-auto text-sm sm:text-base"
                 >
                   <Gift className="w-5 h-5" />
                   ACESSAR BRINDE EXTRA
