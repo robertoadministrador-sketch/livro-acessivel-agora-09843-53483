@@ -11,17 +11,13 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
 
 const ThankYou = () => {
-  const { toast } = useToast();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    subject: "Contato - Página de Agradecimento",
     message: ""
   });
 
@@ -30,21 +26,15 @@ const ThankYou = () => {
   };
 
   const handleAccessBonus = () => {
-    window.open("https://drive.google.com/drive/folders/1rEkxrjnCVaRxOyoYPZ6cXKKOOQFdg8iD?usp=drive_link", "_blank", "noopener,noreferrer");
+    window.open("https://chavedainternetexposeed.my.canva.site/obrigado-por-comprar-09993", "_blank", "noopener,noreferrer");
   };
 
-  const handleSendMessage = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    const mailtoLink = `mailto:professoraana.cultura@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Nome: ${formData.name}\nEmail: ${formData.email}\n\nMensagem:\n${formData.message}`)}`;
-    window.location.href = mailtoLink;
-    
-    toast({
-      title: "Abrindo seu cliente de email",
-      description: "Sua mensagem está pronta para ser enviada."
-    });
-    
+  const handleSendMessage = () => {
+    const subject = encodeURIComponent(`Contato de ${formData.name}`);
+    const body = encodeURIComponent(`Nome: ${formData.name}\nEmail: ${formData.email}\n\nMensagem:\n${formData.message}`);
+    window.location.href = `mailto:professoraana.cultura@gmail.com?subject=${subject}&body=${body}`;
     setIsDialogOpen(false);
+    setFormData({ name: "", email: "", message: "" });
   };
 
   return (
@@ -92,8 +82,8 @@ const ThankYou = () => {
               <Button 
                 onClick={handleAccessLibrary}
                 variant="cta" 
-                size="lg"
-                className="w-full md:w-auto text-sm sm:text-base"
+                size="xl"
+                className="w-full md:w-auto"
               >
                 <BookOpen className="w-5 h-5" />
                 ACESSAR MEU ACERVO DE E-BOOKS
@@ -127,17 +117,17 @@ const ThankYou = () => {
               
               <div className="space-y-4">
                 <p className="text-foreground font-semibold">
-                  Acervo Privado "Milhares de E-books no Google Drive"
+                  Acervo Privado "A Chave da Internet"
                 </p>
                 <p className="text-muted-foreground">
-                  Milhares de E-books para baixar e ler no celular, tablet, computador ou kindle.
+                  Milhares de E-books e muitos outros arquivos com acesso vitalício.
                 </p>
 
                 <Button 
                   onClick={handleAccessBonus}
                   variant="premium" 
-                  size="lg"
-                  className="w-full md:w-auto text-sm sm:text-base"
+                  size="xl"
+                  className="w-full md:w-auto"
                 >
                   <Gift className="w-5 h-5" />
                   ACESSAR BRINDE EXTRA
@@ -166,78 +156,61 @@ const ThankYou = () => {
                 <DialogTrigger asChild>
                   <Button variant="default" size="lg" className="w-full md:w-auto">
                     <Mail className="w-5 h-5" />
-                    💬 Tenho uma dúvida
+                    Enviar Mensagem
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-[500px]">
                   <DialogHeader>
-                    <DialogTitle className="flex items-center gap-2">
-                      <Mail className="w-5 h-5 text-primary" />
-                      Entre em contato
-                    </DialogTitle>
+                    <DialogTitle>Enviar Mensagem</DialogTitle>
                     <DialogDescription>
-                      Envie sua mensagem para a Professora Ana. Resposta em até 24 horas.
+                      Preencha o formulário abaixo. Sua mensagem será enviada para professoraana.cultura@gmail.com
                     </DialogDescription>
                   </DialogHeader>
-                  <form onSubmit={handleSendMessage} className="space-y-4 mt-4">
+                  <div className="space-y-4 py-4">
                     <div className="space-y-2">
-                      <Label htmlFor="name">Seu nome</Label>
+                      <label htmlFor="name" className="text-sm font-medium">
+                        Nome
+                      </label>
                       <Input
                         id="name"
-                        placeholder="Digite seu nome"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        required
+                        placeholder="Seu nome"
                       />
                     </div>
-                    
                     <div className="space-y-2">
-                      <Label htmlFor="email">Seu e-mail</Label>
+                      <label htmlFor="email" className="text-sm font-medium">
+                        Seu Email
+                      </label>
                       <Input
                         id="email"
                         type="email"
-                        placeholder="seu@email.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        required
+                        placeholder="seu@email.com"
                       />
                     </div>
-                    
                     <div className="space-y-2">
-                      <Label htmlFor="subject">Assunto</Label>
-                      <Input
-                        id="subject"
-                        value={formData.subject}
-                        onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                        required
-                      />
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <Label htmlFor="message">Sua mensagem</Label>
+                      <label htmlFor="message" className="text-sm font-medium">
+                        Mensagem
+                      </label>
                       <Textarea
                         id="message"
-                        placeholder="Digite sua mensagem..."
-                        rows={5}
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        required
+                        placeholder="Digite sua mensagem..."
+                        rows={5}
                       />
                     </div>
-                    
-                    <div className="bg-muted/30 rounded-lg p-4 space-y-1">
-                      <p className="text-sm font-semibold flex items-center gap-2">
-                        <Mail className="w-4 h-4 text-primary" />
-                        Destinatário:
-                      </p>
-                      <p className="text-sm text-muted-foreground">professoraana.cultura@gmail.com</p>
-                    </div>
-                    
-                    <Button type="submit" variant="cta" className="w-full">
-                      <Mail className="w-4 h-4 mr-2" />
-                      Enviar mensagem
+                  </div>
+                  <div className="flex justify-end gap-3">
+                    <Button variant="outline" onClick={() => setIsDialogOpen(false)}>
+                      Cancelar
                     </Button>
-                  </form>
+                    <Button onClick={handleSendMessage}>
+                      Enviar Mensagem
+                    </Button>
+                  </div>
                 </DialogContent>
               </Dialog>
 
