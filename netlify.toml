@@ -1,4 +1,0 @@
-[[redirects]]
-from = "/meucheckout/*"
-to = "https://meucheckout.netlify.app/:splat"
-status = 200
