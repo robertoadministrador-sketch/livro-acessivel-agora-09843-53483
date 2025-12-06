@@ -26,7 +26,7 @@ const ThankYou = () => {
   });
 
   const handleAccessLibrary = () => {
-    window.open("https://pt.z-lib.fm/", "_blank", "noopener,noreferrer");
+    window.open("https://z-lib.id/", "_blank", "noopener,noreferrer");
   };
 
   const handleAccessBonus = () => {
