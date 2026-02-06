@@ -53,7 +53,11 @@ const Footer = () => {
               <p className="text-sm text-muted-foreground mb-3">
                 Tire suas dúvidas ou envie sugestões
               </p>
-              <Button variant="ghost-glow" size="sm">
+              <Button 
+                variant="ghost-glow" 
+                size="sm"
+                onClick={() => window.location.href = "mailto:professoraana.cultura@gmail.com"}
+              >
                 Enviar Mensagem
               </Button>
             </div>
