@@ -1,9 +1,67 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
 import { Heart, Mail, MessageCircle, Shield, Clock } from "lucide-react";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 import mercadoPagoLogo from "@/assets/mercado-pago-logo.png";
 
 const Footer = () => {
+  const { toast } = useToast();
+  const [open, setOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "Contato - Livro Acessível",
+    message: ""
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "95ae894d-58c1-4d23-998c-7161b6c697c3",
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          from_name: "Livro Acessível Agora",
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast({
+          title: "Mensagem enviada com sucesso! ✅",
+          description: "A Professora Ana responderá em até 24 horas.",
+        });
+        setFormData({ name: "", email: "", subject: "Contato - Livro Acessível", message: "" });
+        setOpen(false);
+      } else {
+        throw new Error(result.message || "Erro ao enviar");
+      }
+    } catch (error) {
+      toast({
+        title: "Erro ao enviar mensagem",
+        description: "Tente novamente ou envie diretamente para professoraana.cultura@gmail.com",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
   return (
     <footer className="relative py-16 border-t border-primary/20">
       {/* Background */}
@@ -53,13 +111,58 @@ const Footer = () => {
               <p className="text-sm text-muted-foreground mb-3">
                 Tire suas dúvidas ou envie sugestões
               </p>
-              <Button 
-                variant="ghost-glow" 
-                size="sm"
-                onClick={() => window.location.href = "mailto:professoraana.cultura@gmail.com"}
-              >
-                Enviar Mensagem
-              </Button>
+              <Dialog open={open} onOpenChange={setOpen}>
+                <DialogTrigger asChild>
+                  <Button variant="ghost-glow" size="sm">
+                    Enviar Mensagem
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-[500px]">
+                  <DialogHeader>
+                    <DialogTitle className="flex items-center gap-2">
+                      <Mail className="w-5 h-5 text-primary" />
+                      Entre em contato
+                    </DialogTitle>
+                    <DialogDescription>
+                      Envie sua mensagem para a Professora Ana. Resposta em até 24 horas.
+                    </DialogDescription>
+                  </DialogHeader>
+                  <form onSubmit={handleSubmit} className="space-y-4 mt-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="footer-name">Seu nome</Label>
+                      <Input id="footer-name" placeholder="Digite seu nome" value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} required />
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="footer-email">Seu e-mail</Label>
+                      <Input id="footer-email" type="email" placeholder="seu@email.com" value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} required />
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="footer-subject">Assunto</Label>
+                      <Input id="footer-subject" value={formData.subject} onChange={e => setFormData({...formData, subject: e.target.value})} required />
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="footer-message">Sua mensagem</Label>
+                      <Textarea id="footer-message" placeholder="Digite sua mensagem aqui..." rows={5} value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})} required />
+                    </div>
+                    
+                    <div className="bg-muted/30 rounded-lg p-4 space-y-1">
+                      <p className="text-sm font-semibold flex items-center gap-2">
+                        <Mail className="w-4 h-4 text-primary" />
+                        Destinatário:
+                      </p>
+                      <p className="text-sm text-muted-foreground">professoraana.cultura@gmail.com</p>
+                    </div>
+                    
+                    <Button type="submit" variant="cta" className="w-full" disabled={isSubmitting}>
+                      <Mail className="w-4 h-4 mr-2" />
+                      {isSubmitting ? "Enviando..." : "Enviar mensagem"}
+                    </Button>
+                  </form>
+                </DialogContent>
+              </Dialog>
             </div>
           </div>
 
