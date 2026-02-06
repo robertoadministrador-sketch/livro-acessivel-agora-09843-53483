@@ -140,7 +140,7 @@ const ThankYou = () => {
                   className="w-full md:w-auto text-sm sm:text-base"
                 >
                   <Gift className="w-5 h-5" />
-                  ACESSAR BRINDE EXTRA
+                  ACESSAR ACERVO PRIVADO
                 </Button>
               </div>
             </div>
