@@ -19,17 +19,49 @@ const TestimonialsSection = () => {
     subject: "Acervo de E-books",
     message: ""
   });
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-    // Criar o link mailto com os dados do formulário
-    const mailtoLink = `mailto:professoraana.cultura@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Nome: ${formData.name}\nEmail: ${formData.email}\n\nMensagem:\n${formData.message}`)}`;
-    window.location.href = mailtoLink;
-    toast({
-      title: "Abrindo seu cliente de email",
-      description: "Sua mensagem está pronta para ser enviada."
-    });
-    setOpen(false);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "95ae894d-58c1-4d23-998c-7161b6c697c3",
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          from_name: "Livro Acessível Agora",
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast({
+          title: "Mensagem enviada com sucesso! ✅",
+          description: "A Professora Ana responderá em até 24 horas.",
+        });
+        setFormData({ name: "", email: "", subject: "Acervo de E-books", message: "" });
+        setOpen(false);
+      } else {
+        throw new Error(result.message || "Erro ao enviar");
+      }
+    } catch (error) {
+      toast({
+        title: "Erro ao enviar mensagem",
+        description: "Tente novamente ou envie diretamente para professoraana.cultura@gmail.com",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   const stats = [{
     number: "50k+",
@@ -198,9 +230,9 @@ const TestimonialsSection = () => {
                     <p className="text-sm text-muted-foreground">professoraana.cultura@gmail.com</p>
                   </div>
                   
-                  <Button type="submit" variant="cta" className="w-full">
+                  <Button type="submit" variant="cta" className="w-full" disabled={isSubmitting}>
                     <Mail className="w-4 h-4 mr-2" />
-                    Enviar mensagem
+                    {isSubmitting ? "Enviando..." : "Enviar mensagem"}
                   </Button>
                 </form>
               </DialogContent>
