@@ -78,10 +78,16 @@ const ThankYou = () => {
             <h1 className="text-4xl md:text-5xl font-bold">
               Sua compra foi confirmada!
             </h1>
-            <p className="text-xl text-muted-foreground">
-              Obrigado por fazer parte da Democratização da Leitura.
-            </p>
-          </div>
+           <p className="text-xl text-muted-foreground">
+  Obrigado por fazer parte da Democratização da Leitura.
+</p>
+
+<div className="mt-6 border border-primary/30 rounded-xl p-4 bg-muted/30">
+  <p className="text-center text-base font-medium">
+    📌 Salve este endereço no seu computador ou celular para fácil acesso.
+  </p>
+</div>
+
 
           {/* Biblioteca */}
           <Card className="p-8">
@@ -110,7 +116,7 @@ const ThankYou = () => {
               <div className="flex items-center gap-3">
                 <Gift className="w-8 h-8 text-gold" />
                 <h2 className="text-2xl font-bold">
-                  🎁 Brinde Extra
+                  🎁 Acesso ao Acervo da Professoara Ana
                 </h2>
               </div>
 
@@ -197,6 +203,47 @@ const ThankYou = () => {
                   </form>
                 </DialogContent>
               </Dialog>
+</Dialog>
+
+{/* BLOCO DO APLICATIVO */}
+<Card className="mt-8 p-6 border-primary/20 bg-muted/20">
+  <div className="space-y-4">
+
+    <div className="flex items-center gap-3">
+      <div className="rounded-lg bg-primary/10 p-3">
+        📱
+      </div>
+      <div>
+        <h4 className="text-lg font-semibold">
+          Aplicativo para leitura de livros
+        </h4>
+        <p className="text-sm text-muted-foreground">
+          Disponível para Android e iOS
+        </p>
+      </div>
+    </div>
+
+    <Button
+      asChild
+      size="lg"
+      className="w-full"
+    >
+      <a
+        href="https://readera.org/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        BAIXAR APLICATIVO DE LEITURA
+      </a>
+    </Button>
+
+  </div>
+</Card>
+
+</div>
+</Card>
+
+              
             </div>
           </Card>
 
