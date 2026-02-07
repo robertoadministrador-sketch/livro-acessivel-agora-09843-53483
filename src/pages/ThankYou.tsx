@@ -253,7 +253,7 @@ const ThankYou = () => {
               </p>
             </footer>
 
-          </Card>
+      
         </div>
       </section>
     </main>
