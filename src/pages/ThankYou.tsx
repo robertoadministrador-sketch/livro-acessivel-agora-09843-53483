@@ -246,12 +246,14 @@ const ThankYou = () => {
               
             
 
-          {/* Footer */}
-          <footer className="text-center py-8">
-            <p className="text-sm text-muted-foreground">
-              © 2024 Livro Acessível Agora • Professora Ana
-            </p>
-          </footer>
+                      {/* Footer */}
+            <footer className="text-center py-8">
+              <p className="text-sm text-muted-foreground">
+                © 2024 Livro Acessível Agora • Professora Ana
+              </p>
+            </footer>
+
+          </Card>
         </div>
       </section>
     </main>
