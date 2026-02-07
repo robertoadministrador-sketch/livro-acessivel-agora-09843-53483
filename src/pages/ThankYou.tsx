@@ -203,7 +203,7 @@ const ThankYou = () => {
                   </form>
                 </DialogContent>
               </Dialog>
-</Dialog>
+
 
 {/* BLOCO DO APLICATIVO */}
 <Card className="mt-8 p-6 border-primary/20 bg-muted/20">
@@ -241,11 +241,10 @@ const ThankYou = () => {
 </Card>
 
 </div>
-</Card>
+
 
               
-            </div>
-          </Card>
+            
 
           {/* Footer */}
           <footer className="text-center py-8">
