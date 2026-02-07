@@ -110,7 +110,7 @@ const ThankYou = () => {
               <div className="flex items-center gap-3">
                 <Gift className="w-8 h-8 text-gold" />
                 <h2 className="text-2xl font-bold">
-                  🎁 Brinde Extra
+                  🎁 Acervo privado da Professora Ana
                 </h2>
               </div>
 
